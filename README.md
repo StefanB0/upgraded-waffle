@@ -25,11 +25,10 @@ Marking
 
 Game: 5
 
-Saving the game: +1
-Enemy AI: +1
-Boss battle: +1
-Fancy main menu: +1
-Player abilities (progression): + 1
-
-All the other stuff: +999
+- Saving the game: +1
+- Enemy AI: +1
+- Boss battle: +1
+- Fancy main menu: +1
+- Player abilities (progression): + 1
+- All the other stuff: +999
 
