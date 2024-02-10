@@ -20,6 +20,8 @@ Budget: 2 cans of beer
 
 # [[Boss]]
 
+# [[Extra ideas]]
+
 ---
 Marking
 
