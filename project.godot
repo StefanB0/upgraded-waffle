@@ -29,6 +29,10 @@ window/size/viewport_height=900
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GenerateAnimationPlayerFrameTracks/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

@@ -14,14 +14,14 @@ var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
-@onready var animated_sprite := $PlayerAnimation
+@onready var animation_player := $AnimationPlayer
 
 func _physics_process(delta: float):
 	player_movement(delta)
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	animated_sprite.play("idle")
+	animation_player.play("attack_spin")
 	
 
 func player_movement(delta: float):
