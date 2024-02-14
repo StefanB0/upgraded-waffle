@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dn5vkn2f1wvs7"]
 
-[ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_diild"]
+[ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_diild"]
 [ext_resource type="Texture2D" uid="uid://dxtny3g3ks0k8" path="res://icon.svg" id="1_yls6m"]
 [ext_resource type="Theme" uid="uid://duqa7trn1b3y2" path="res://UI/Themes/Funny/FunnyButton.tres" id="2_lqph4"]
 
@@ -51,7 +51,3 @@ text = "Settings"
 layout_mode = 2
 theme = ExtResource("2_lqph4")
 text = "Exit Game"
-
-[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
