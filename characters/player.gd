@@ -14,30 +14,42 @@ var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
-@onready var animation_player := $AnimationPlayer
+@onready var animation_player:AnimationPlayer = $AnimationPlayer
+@onready var animation_tree:AnimationTree = $AnimationTree
+@onready var sprite2d := $Sprite2D
+@onready var playback:AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 
-func _physics_process(delta: float):
+func _physics_process(delta: float) -> void:
 	player_movement(delta)
+	player_attack()
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	animation_player.play("attack_spin")
+	pass
 	
 
-func player_movement(delta: float):
-	
-	#region jumping
+func player_movement(delta: float) -> void:
 	var gravity := jump_gravity if velocity.y < 0.0 else fall_gravity
 	velocity.y += gravity * delta
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-	#endregion
 	
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
+	animation_tree.set("parameters/Walk/blend_position", direction)
 	if direction:
 		velocity.x = direction * player_speed
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, player_speed)
+		
+	if signf(velocity.x) != 0:
+		sprite2d.flip_h = velocity.x < 0
 
+func player_attack() -> void:
+	if Input.is_action_just_pressed("attack_1"):
+		playback.travel("attack_1")
+		
+		
+		
