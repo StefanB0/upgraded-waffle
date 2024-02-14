@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://duqa7trn1b3y2"]
+
+[ext_resource type="Texture2D" uid="uid://dxtny3g3ks0k8" path="res://icon.svg" id="1_pjycs"]
+[ext_resource type="FontFile" uid="uid://dyvm23v2jdb2d" path="res://UI/Fonts/Humor-Sans.ttf" id="1_riypa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1x0b"]
+texture = ExtResource("1_pjycs")
+
+[resource]
+default_font = ExtResource("1_riypa")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.431373, 0, 0, 1)
+Button/constants/icon_max_width = 64
+Button/constants/outline_size = 9
+Button/font_sizes/font_size = 64
+Button/styles/pressed = SubResource("StyleBoxTexture_n1x0b")
